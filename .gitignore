@@ -61,3 +61,27 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+Assets/.DS_Store
+
+Assets/Asset_Replacement_Tool.cs
+
+Assets/Asset_Replacement_Tool.cs.meta
+
+Assets/Editor.meta
+
+Assets/Scenes.meta
+
+Assets/Settings.meta
+
+Assets/SharedAssets.meta
+
+Assets/Tutorials.meta
+
+Assets/Scenes/
+
+Assets/SharedAssets/
+
+Assets/Tutorials/
+
+Assets/Settings/
