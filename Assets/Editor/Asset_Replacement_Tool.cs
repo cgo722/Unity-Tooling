@@ -1,11 +1,11 @@
 using Unity.Tutorials.Core.Editor;
 using UnityEditor;
-using UnityEngine; // It's good practice to include this
+using UnityEngine; 
 
 
 public class Asset_Replacement_Tool : EditorWindow
 {
-    // Variables to hold the objects the user will select
+    
     private GameObject replacementPrefab;
     private Material newMaterial;
 
@@ -25,11 +25,8 @@ public class Asset_Replacement_Tool : EditorWindow
     private void OnGUI()
     {
         
-        // --- Prefab Replacement Section ---
         GUILayout.Label("Replace Selected Scene Objects", EditorStyles.boldLabel);
 
-        // Assign the return value of ObjectField to our variables to store the selection
-        // We convert the integer from .Length to a string so the Label can display it.
         GUILayout.Label($"Selected Objects: {Selection.gameObjects.Length}");
         // The Toggle function returns the new state, so we must assign it back to our variable.
         changeName = GUILayout.Toggle(changeName, "Change Replacement Name to Prefab Name");
@@ -37,7 +34,6 @@ public class Asset_Replacement_Tool : EditorWindow
 
         if (GUILayout.Button("Replace Asset"))
         {
-            // This is a local variable, so it doesn't need an access modifier like 'private'.
             GameObject[] selectedObjects = Selection.gameObjects;
             if (replacementPrefab == null)
             {
@@ -118,9 +114,6 @@ public class Asset_Replacement_Tool : EditorWindow
                     // Register the material change for undo
                     Undo.RecordObject(renderer, "Change Material");
 
-                    // Create a new materials array and fill it with the new material.
-                    // This is necessary to support objects with multiple material slots.
-                    // Using .sharedMaterial only changes the first material.
                     var newMaterials = new Material[renderer.sharedMaterials.Length];
                     for (int i = 0; i < newMaterials.Length; i++)
                     {
